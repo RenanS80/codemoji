@@ -2,22 +2,76 @@ header {
     height: 100px;
 
     .container {
+        @include flexboxSpaceBetweenCenter();
         height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
 
-        .header-items {
-            display: flex;
-            align-items: center;
+        .menu-section.on {
+            @media (max-width: 600px) {
+                @include flexboxCenterCenter();
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: $white;
+                z-index: 10;            // para ficar posicionado sobre os demais elementos da página
+            }
+
+            .menu-toggle {
+                @media (max-width: 600px) {
+                    position: absolute;
+                    right: 15px;
+                    top: 32px;
+                }
+            }
+
+            nav {
+                display: block;
+                
+                .search-bar,
+                .btn-login {
+                    text-align: center;                  
+                    display: flex;
+                }
+
+                .search-bar {
+                    margin-left: 70px;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+
+        .menu-section {
+
+            .menu-toggle {
+
+                .fa-xmark,
+                .fa-bars {
+                    display: none;
+                    font-size: 30px;
+                }
+
+                .fa-bars {
+                    @media (max-width: 600px) {
+                        display: block;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        nav {
+            @include flexboxStartCenter();
             gap: 45px;
 
+            @media (max-width: 600px) {
+                display: none;
+            }
+
             .search-bar {
+                @include flexboxCenterCenter();
                 width: 50px;
                 height: 50px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 border-radius: 50%;
                 border: 2px solid $white-200;
                 background: transparent;

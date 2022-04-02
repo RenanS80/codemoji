@@ -5,29 +5,52 @@ main {
         height: 100%;
         padding-top: 100px;
 
-        .main-first {
-            display: flex;
-            justify-content: space-around;
+        .main-top {
+            @include flexboxSpaceAroundStart();
+
+            @media (max-width: 830px) {
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+            }
 
             .blue-square {
+                @include flexboxCenterCenter();
                 width: 200px;
                 height: 200px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 background: linear-gradient(136.92deg, #2dc7ed 3.14%, rgba(45, 199, 237, 0) 100%);
                 transform: rotate(45deg);
+
+                @media (max-width: 1300px) {
+                    width: 140px;
+                    height: 140px;
+                    transform: rotate(0deg);
+                }
 
                 img {
                     width: 75%;
                     transform: rotate(-45deg);
+
+                    @media (max-width: 1300px) {
+                        width: 85%;
+                        padding-bottom: 20px;
+                        transform: rotate(0deg);
+                    }
                 }
             }
 
-            .main-text {
+            .main-title {
                 max-width: 800px;
                 text-align: center;
                 margin-top: 10px;
+
+                @media(max-width: 1100px) {
+                    max-width: 500px;
+                }
+
+                @media (max-width: 830px) {
+                    order: 1;
+                }
 
                 h1 {
                     margin-top: 40px;
@@ -35,47 +58,81 @@ main {
             }
 
             .yellow-circle {
+                @include flexboxCenterCenter();
                 width: 200px;
                 height: 200px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 background: linear-gradient(270deg, #f2c94c 0%, rgba(242, 201, 76, 0) 100%);
                 clip-path: circle();
 
+                @media (max-width: 1300px) {
+                    width: 140px;
+                    height: 140px;
+                }
+
                 img {
                     width: 75%;
+
+                    @media (max-width: 1300px) {
+                        width: 85%;
+                    }
                 }
             }
         }
 
-        .main-second {
-            display: flex;
-            justify-content: space-around;
+        .main-bottom {
+            @include flexboxSpaceAroundStart();
             margin-top: 80px;
 
+            @media (max-width: 830px) {
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+            }
+
             .red-square {
+                @include flexboxCenterCenter();
                 width: 200px;
                 height: 200px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 background: linear-gradient(136.92deg, #ef7c89 3.14%, rgba(239, 124, 137, 0) 100%);
                 border-radius: 30px;
                 margin-top: 30px;
 
+                @media (max-width: 1300px) {
+                    width: 140px;
+                    height: 140px;
+                }
+
+                @media (max-width: 830px) {
+                    margin-top: 0px;
+                }
+
                 img {
                     width: 75%;
+
+                    @media (max-width: 1300px) {
+                        width: 85%;
+                    }
                 }
             }
 
-            .middle {
+            .main-bottom-middle {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-end;
                 padding: 0px 12px;
 
+                @media (max-width: 830px) {
+                    order: -1;
+                }
+
                 .group-buttons {
+                    @include flexboxCenterCenter();
+                    gap: 50px;
+                    
+                    @media (max-width: 550px) {
+                        flex-direction: column;
+                    }
+                    
                     button {
                         padding: 15px 40px;
                         border-radius: 10px;
@@ -87,13 +144,13 @@ main {
                         line-height: 24px;
                         cursor: pointer;
                         transition: all 0.5s ease;
+                        
                     }
 
                     .btn-create-memoji {
                         background: $purple;
                         border: 0;
                         color: $white;
-                        margin-right: 50px;
 
                         &:hover {
                             opacity: 0.9;
@@ -113,65 +170,96 @@ main {
                 }
 
                 .purple-circle {
+                    @include flexboxCenterCenter();
                     width: 200px;
                     height: 200px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
                     background: linear-gradient(270deg, #7248ec 0%, rgba(114, 72, 236, 0) 100%);
                     clip-path: circle();
                     margin-top: 100px;
 
+                    @media (max-width: 1300px) {
+                        width: 140px;
+                        height: 140px;
+                    }
+
+                    @media (max-width: 830px) {
+                        align-self: center;
+                        margin-top: 50px;
+                    }
+
                     img {
                         width: 75%;
+
+                        @media (max-width: 1300px) {
+                            width: 85%;
+                        }
                     }
                 }
             }
 
             .green-triangle-clip-path {
+                @include flexboxCenterCenter();
                 position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 width: 200px;
                 height: 200px;
+
+                @media (max-width: 1300px) {
+                    width: 140px;
+                    height: 140px;
+                }
 
                 img {
                     position: absolute;
                     width: 90%;
+
+                    @media (max-width: 1300px) {
+                        width: 85%;
+                    }
                 }
 
                 .green-triangle {
+                    @include flexboxCenterCenter();
                     position: absolute;
                     width: 200px;
                     height: 200px;
                     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
                     background: linear-gradient(180deg, #00e861 0%, rgba(0, 232, 97, 0) 100%);
+
+                    @media (max-width: 1300px) {
+                        width: 140px;
+                        height: 140px;
+                    }
                 }
             }
 
         }
 
-        .main-third {
+        .quotes {
+            @include flexboxSpaceAroundCenter();
             margin-top: 83px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
             padding-bottom: 50px;
+
+            @media (max-width: 420px) {
+                flex-direction: column;
+                gap: 25px;
+            }
 
             .nikola,
             .steve {
                 max-width: 400px;
 
+                @media (max-width: 830px) {
+                    padding: 0px 10px;
+                }
+
                 h4 {
+                    @include flexboxStartCenter();
                     margin-bottom: 28px;
                     padding-left: 3px;
-                    display: flex;
-                    align-items: center;
                     
+                    @media (max-width: 420px) {
+                        margin-bottom: 15px;
+                    }
 
                     &::before {
                         content: "";
