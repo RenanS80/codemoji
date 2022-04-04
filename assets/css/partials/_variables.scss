@@ -5,56 +5,32 @@ $gray: #2F2F2F;
 
 
 // Flexbox
-@mixin flexboxStartStart(){
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-@mixin flexboxStartCenter(){              //
+@mixin flexboxStartCenter(){              
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-@mixin flexboxCenterStart(){
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-@mixin flexboxCenterCenter(){            //
+@mixin flexboxCenterCenter(){            
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@mixin flexboxSpaceBetweenStart(){
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-@mixin flexboxSpaceBetweenCenter(){         //
+@mixin flexboxSpaceBetweenCenter(){         
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-@mixin flexboxSpaceAroundStart(){         //
+@mixin flexboxSpaceAroundStart(){         
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
 }
 
-@mixin flexboxSpaceAroundCenter(){         //
+@mixin flexboxSpaceAroundCenter(){         
     display: flex;
     justify-content: space-around;
-    align-items: center;
-}
-
-@mixin flexboxEndCenter(){
-    display: flex;
-    justify-content: flex-end;
     align-items: center;
 }
