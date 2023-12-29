@@ -1,4 +1,7 @@
-$purple: #6610F2;
+$purple: #846AFF;
+$background: #F8F8FF;
+
+
 $white: #F9F9F9;
 $white-200: #EAEAEA;
 $gray: #2F2F2F;
@@ -33,4 +36,10 @@ $gray: #2F2F2F;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+@mixin flexboxColumnCenter(){         
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

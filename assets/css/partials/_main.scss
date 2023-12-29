@@ -1,72 +1,51 @@
 main {
-    height: 100%;
+    height: calc(100vh - 100px);
 
     .container {
+        @include flexboxColumnCenter();
         height: 100%;
-        padding-top: 100px;
 
-        .main-top {
-            @include flexboxSpaceAroundStart();
+        .memoji-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-            @media (max-width: 830px) {
-                flex-direction: column;
-                align-items: center;
-                gap: 25px;
-            }
-
-            .blue-square {
+            .memoji-girl1{
                 @include flexboxCenterCenter();
                 width: 200px;
                 height: 200px;
-                background: linear-gradient(136.92deg, #2dc7ed 3.14%, rgba(45, 199, 237, 0) 100%);
-                transform: rotate(45deg);
 
                 @media (max-width: 1300px) {
                     width: 140px;
                     height: 140px;
-                    transform: rotate(0deg);
+                }
+
+                @media (max-width: 830px) {
+                    display: none;
                 }
 
                 img {
                     width: 75%;
-                    transform: rotate(-45deg);
 
                     @media (max-width: 1300px) {
                         width: 85%;
                         padding-bottom: 20px;
-                        transform: rotate(0deg);
                     }
                 }
             }
 
-            .main-title {
-                max-width: 800px;
-                text-align: center;
-                margin-top: 10px;
-
-                @media(max-width: 1100px) {
-                    max-width: 500px;
-                }
-
-                @media (max-width: 830px) {
-                    order: 1;
-                }
-
-                h1 {
-                    margin-top: 40px;
-                }
-            }
-
-            .yellow-circle {
+            .memoji-boy1 {
                 @include flexboxCenterCenter();
                 width: 200px;
                 height: 200px;
-                background: linear-gradient(270deg, #f2c94c 0%, rgba(242, 201, 76, 0) 100%);
-                clip-path: circle();
 
                 @media (max-width: 1300px) {
                     width: 140px;
                     height: 140px;
+                }
+
+                @media (max-width: 830px) {
+                    display: none;
                 }
 
                 img {
@@ -79,9 +58,35 @@ main {
             }
         }
 
+        .main-middle {
+            @include flexboxCenterCenter();
+
+            .main-title {
+                max-width: 710px;
+                text-align: center;
+                margin-top: 10px;
+
+                @media(max-width: 1100px) {
+                    max-width: 500px;
+                }
+
+                @media (max-width: 830px) {
+                    order: 1;
+                }
+
+                h1 {
+                    margin-top: 15px;
+
+                    span {
+                        color: $purple;
+                    }
+                }
+            }
+        }
+
         .main-bottom {
-            @include flexboxSpaceAroundStart();
-            margin-top: 80px;
+            @include flexboxSpaceBetweenCenter();
+            margin-top: 64px;
 
             @media (max-width: 830px) {
                 flex-direction: column;
@@ -89,13 +94,12 @@ main {
                 gap: 25px;
             }
 
-            .red-square {
+            .memoji-boy2 {
                 @include flexboxCenterCenter();
                 width: 200px;
                 height: 200px;
-                background: linear-gradient(136.92deg, #ef7c89 3.14%, rgba(239, 124, 137, 0) 100%);
-                border-radius: 30px;
                 margin-top: 30px;
+                margin-left: -31px;
 
                 @media (max-width: 1300px) {
                     width: 140px;
@@ -103,15 +107,7 @@ main {
                 }
 
                 @media (max-width: 830px) {
-                    margin-top: 0px;
-                }
-
-                img {
-                    width: 75%;
-
-                    @media (max-width: 1300px) {
-                        width: 85%;
-                    }
+                    display: none;
                 }
             }
 
@@ -131,24 +127,28 @@ main {
                     
                     @media (max-width: 550px) {
                         flex-direction: column;
+                        gap: 24px;
                     }
                     
                     button {
-                        padding: 15px 40px;
-                        border-radius: 10px;
+                        padding: 16px 48px;
+                        border-radius: 6px;
                         text-transform: uppercase;
-                        font-family: "Inter", sans-serif;
                         font-style: normal;
                         font-weight: 600;
                         font-size: 18px;
                         line-height: 24px;
                         cursor: pointer;
                         transition: all 0.5s ease;
-                        
+
+                        @media (max-width: 550px) {
+                            font-size: 16px;
+                        }
                     }
 
                     .btn-create-memoji {
                         background: $purple;
+                        border: 2px solid $purple;
                         border: 0;
                         color: $white;
 
@@ -169,13 +169,12 @@ main {
                     }
                 }
 
-                .purple-circle {
+                .memoji-boy3 {
                     @include flexboxCenterCenter();
                     width: 200px;
                     height: 200px;
-                    background: linear-gradient(270deg, #7248ec 0%, rgba(114, 72, 236, 0) 100%);
-                    clip-path: circle();
                     margin-top: 100px;
+                    align-self: center;
 
                     @media (max-width: 1300px) {
                         width: 140px;
@@ -183,13 +182,12 @@ main {
                     }
 
                     @media (max-width: 830px) {
-                        align-self: center;
-                        margin-top: 50px;
+                        display: none;
                     }
 
                     img {
                         width: 75%;
-
+    
                         @media (max-width: 1300px) {
                             width: 85%;
                         }
@@ -197,15 +195,20 @@ main {
                 }
             }
 
-            .green-triangle-clip-path {
+            .memoji-girl2 {
                 @include flexboxCenterCenter();
                 position: relative;
                 width: 200px;
                 height: 200px;
+                margin-right: -31px;
 
                 @media (max-width: 1300px) {
                     width: 140px;
                     height: 140px;
+                }
+
+                @media (max-width: 830px) {
+                    display: none;
                 }
 
                 img {
@@ -216,69 +219,8 @@ main {
                         width: 85%;
                     }
                 }
-
-                .green-triangle {
-                    @include flexboxCenterCenter();
-                    position: absolute;
-                    width: 200px;
-                    height: 200px;
-                    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-                    background: linear-gradient(180deg, #00e861 0%, rgba(0, 232, 97, 0) 100%);
-
-                    @media (max-width: 1300px) {
-                        width: 140px;
-                        height: 140px;
-                    }
-                }
             }
 
-        }
-
-        .quotes {
-            @include flexboxSpaceAroundCenter();
-            margin-top: 83px;
-            padding-bottom: 50px;
-
-            @media (max-width: 420px) {
-                flex-direction: column;
-                gap: 25px;
-            }
-
-            .nikola,
-            .steve {
-                max-width: 400px;
-
-                @media (max-width: 830px) {
-                    padding: 0px 10px;
-                }
-
-                h4 {
-                    @include flexboxStartCenter();
-                    margin-bottom: 28px;
-                    padding-left: 3px;
-                    
-                    @media (max-width: 420px) {
-                        margin-bottom: 15px;
-                    }
-
-                    &::before {
-                        content: "";
-                        display: inline-block;
-                        height: 25px;
-                        width: 3px;
-                        margin-right: 12px;
-                        background: $purple;
-                    }
-                }
-
-                q {
-                    font-family: "Inter", sans-serif;
-                    font-style: italic;
-                    font-weight: 400;
-                    font-size: 16px;
-                    line-height: 26px;
-                }
-            }
         }
     }
 }

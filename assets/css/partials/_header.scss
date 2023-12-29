@@ -5,6 +5,12 @@ header {
         @include flexboxSpaceBetweenCenter();
         height: 100%;
 
+        .header__brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;;
+        }
+
         .menu-section.on {
             @media (max-width: 600px) {
                 @include flexboxCenterCenter();
@@ -35,7 +41,7 @@ header {
                 }
 
                 .search-bar {
-                    margin-left: 70px;
+                    margin-left: 95px;
                     margin-bottom: 30px;
                 }
             }
